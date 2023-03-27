@@ -1,1 +1,1 @@
-# Ignite ReacJS Refactoring Classess TS
+# Ignite ReactJS Refactoring Classess TS
