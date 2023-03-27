@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "target": "es5",
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext"
+  },
+  "include": [
+    "src",
+    "src/components/Modal/.index.jsx",
+    "src/components/ModalAddFood/.index.jsx"
+  ]
+}
