@@ -4,13 +4,13 @@ import { Form } from './styles'
 import { Modal } from '../Modal'
 import { Input } from '../Input'
 import { createRef } from 'react'
-import { FoodTyping } from '../../types'
+import { FoodData } from '../../types'
 import { FormHandles } from '@unform/core'
 
 interface ModalAddFoodProps {
   setIsOpen: () => void
   isOpen: boolean
-  handleAddFood: (data: FoodTyping) => void
+  handleAddFood: (data: FoodData) => void
 }
 
 export function ModalAddFood(props: ModalAddFoodProps) {
@@ -18,7 +18,7 @@ export function ModalAddFood(props: ModalAddFoodProps) {
 
   const formRef = createRef<FormHandles>()
 
-  async function handleSubmit(data: FoodTyping) {
+  async function handleSubmit(data: FoodData) {
     const { handleAddFood } = props
 
     handleAddFood(data)

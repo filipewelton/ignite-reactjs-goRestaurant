@@ -6,12 +6,12 @@ import { Food } from '../../components/Food'
 import { ModalAddFood } from '../../components/ModalAddFood'
 import { ModalEditFood } from '../../components/ModalEditFood'
 import { FoodsContainer } from './styles'
-import { FoodTyping } from '../../types'
+import { FoodData } from '../../types'
 import api from '../../services/api'
 
 export function Dashboard() {
-  const [foods, setFoods] = useState<FoodTyping[]>([])
-  const [editingFood, setEditingFood] = useState<FoodTyping>({
+  const [foods, setFoods] = useState<FoodData[]>([])
+  const [editingFood, setEditingFood] = useState<FoodData>({
     available: false,
     description: '',
     id: 0,
@@ -29,9 +29,9 @@ export function Dashboard() {
       .then((data) => setFoods(data))
   }, [])
 
-  async function handleAddFood(food: FoodTyping) {
+  async function handleAddFood(food: FoodData) {
     try {
-      const newFood: FoodTyping = await api
+      const newFood: FoodData = await api
         .post('/foods', {
           ...food,
           available: true,
@@ -45,14 +45,14 @@ export function Dashboard() {
     }
   }
 
-  async function handleUpdateFood(food: FoodTyping) {
+  async function handleUpdateFood(food: FoodData) {
     try {
       if (editingFood === undefined) {
         return
       }
 
       const { id } = editingFood
-      const foodUpdated: FoodTyping = await api
+      const foodUpdated: FoodData = await api
         .put(`/foods/${id}`, {
           ...editingFood,
           ...food,
@@ -69,7 +69,7 @@ export function Dashboard() {
     }
   }
 
-  function handleEditFood(food: FoodTyping) {
+  function handleEditFood(food: FoodData) {
     setEditingFood(food)
     setEditModalOpen(!editModalOpen)
   }

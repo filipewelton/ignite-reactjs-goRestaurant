@@ -1,6 +1,4 @@
-import './components/Food/index'
-
-export interface FoodTyping {
+export interface FoodData {
   id: number
   name: string
   description: string
